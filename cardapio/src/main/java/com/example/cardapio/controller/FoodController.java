@@ -13,11 +13,11 @@ import java.util.List;
 @RequestMapping("food")
 public class FoodController {
     @Autowired
-    private FoodRepository repository1;
+    private FoodRepository repository;
     @GetMapping
     public List<FoodResponseDTO> getAll(){
 
-        List<FoodResponseDTO> foodList = repository1.findAll().stream().map(FoodResponseDTO::new).toList();
+        List<FoodResponseDTO> foodList = repository.findAll().stream().map(FoodResponseDTO::new).toList();
         return foodList;
     }
 }
